@@ -2,9 +2,15 @@
 
 using namespace std;
 
+int n=10;
+
 int main(int argc, char** argv){
-    cout << "Contagem regressiva: " << endl;
     
-    for(int i=9; i>=0; i--)
-        cout << i << endl;
+    int n=20;
+    {
+        int n=30;
+        ::n++; //Altera o valor da variavel global
+        cout << ::n << " " << n << endl;
+    }
+    cout << ::n << " " << n << endl;
 }
