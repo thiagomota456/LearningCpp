@@ -1,0 +1,51 @@
+Uso de const em posteiros
+
+No pdf Linguagem C++ do Silvio do Lago Pereira tem a seguinte explicação:
+
+É possível usar a palavra const também na definição de ponteiros. Nesse caso, deve
+estar bem claro o que será constante: o objeto que aponta ou aquele que é apontado.
+Exemplo 1.12:
+const char * ptr1 = “um”;
+// o objeto apontado é constante
+char * const ptr2 = “dois”; // o objeto que aponta é constante
+const char * const ptr3 = “três”; // ambos são constantes
+
+Não entedi a diferença entre os treis casos. Quando cada caso é aplicado ? 
+
+----------------------------------------------------------------------------------
+
+Quando usar uma variáveis de referência e qundo usar um ponteiro ?
+
+No pdf Linguagem C++ do Silvio do Lago Pereira tem a seguinte explicação:
+
+Além de ponteiros, a linguagem C++ oferece também as variáveis de referência. Esse
+novo recurso permite criar uma variável como sendo um sinônimo de uma outra.
+Assim, modificando-se uma delas a outra será também, automaticamente, atualizada.
+
+Exemplo 1.14:
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char** argv){
+    int n=5;
+    int &nr = n; //nr agora é uma referencia de n
+    int *ptr = &nr; //ptr aponta nr (e n também)
+    cout << "n = " << n << " nr = " << nr << endl;
+    
+    n+=2;
+    cout << "n = " << n << " nr = " << nr << endl;
+
+    *ptr = 3;
+    cout << "n = " << n << " nr = " << nr << endl;
+}
+
+A saída produzida por esse programa é a seguinte:
+n = 5 nr = 5
+n = 7 nr = 7
+n = 3 nr = 3
+
+Quando usar uma variáveis de referência e qundo usar um ponteiro ?
+
+---------------------------------------------------------------------
+
